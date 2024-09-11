@@ -1,6 +1,6 @@
 html {
     box-sizing: border-box;
-    background-color: white;
+    background-color: var(--color-light-bg);
     scroll-behavior: smooth;
 }
 
@@ -27,20 +27,10 @@ ul {
 }
 
 @font-face {
-    font-family: 'OpenSans';
-    src: local('OpenSans-Bold'),
-        url('fonts/OpenSansBold.woff2') format('woff2'),
-        url('fonts/OpenSansBold.woff') format('woff');
-    font-weight: 700;
-    font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'OpenSans';
-    src: local('OpenSans-Regular'),
-        url('fonts/OpenSansRegular.woff2') format('woff2'),
-        url('fonts/OpenSansRegular.woff') format('woff');
+    font-family: 'TT2020Base-Italic';
+    src: local('TT2020Base-Italic'),
+        url('../fonts/TT2020BaseItalic.woff2') format('woff2'),
+        url('../fonts/TT2020BaseItalic.woff') format('woff');
     font-weight: 400;
     font-style: normal;
     font-display: swap;
@@ -48,31 +38,68 @@ ul {
 
 /* ----------------------------------- global ----------------------------------- */
 /** значения подогнать под нужные */
-.container { 
-    width: 1280px;
+.container {
+    width: 680px;
     margin: 0 auto;
-    padding-left: 40px;
-    padding-right: 40px; 
+    padding: 20px;
+    padding-top: 100px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    /* margin-top: 100px; */
+    outline: 2px solid rgb(255, 170, 0);
 }
 
 .flex {
     display: flex;
 }
 
-/** здесь любые цвета */
 :root {
-    --color-primary: #F1CDB3; 
+    --color-blue-primary: #0B5FFF;
+    --color-blue-light: #B3CDFF;
+    --color-grey-dark: #393A4A;
+    --color-light-bg: #F1F2F5;
 }
 
-/** для button **/
 .btn-reset {
     border: none;
     background-color: transparent;
     cursor: pointer;
 }
 
+
+/*---------------------------------стили для карточек-------------------------------------------------*/
+.container_img {
+    overflow: hidden;
+    height: 680px;
+    margin-bottom: 20px;
+}
+
+/*---------------------------------стили для текста-------------------------------------------------*/
+.container_text{
+    font-family: 'TT2020Base-Italic', Helvetica, sans-serif;
+    width: 50%;
+    height: 10px;
+    overflow: hidden;
+    outline: 2px solid red;
+}
+
+.text {
+    display: block;
+    width: 320px;
+}
+
+/*---------------------------------стили для кнопок-------------------------------------------------*/
+.container_btn{
+    width: 120px;
+    outline: 2px solid red;
+
+}
+
 .btn {
-    padding: 15px 45px 15px 45px;
+    /* padding: 15px 45px 15px 45px; */
+    width: 10px;
+    height: 10px;
+    margin: 10px;
     outline: none;
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-weight: 400;
@@ -81,6 +108,24 @@ ul {
     letter-spacing: 0.06em;
     color: black;
     border-radius: 50px;
-    background-color: red;
+    background-color: var(--color-blue-primary);
     transition: background-color 0.3s;
 }
+
+.btn:hover {
+    background-color: var(--color-blue-light);
+}
+
+/* select btn */
+.btn-select {
+    background-color: transparent;
+    border: 2px solid var(--color-blue-primary);
+    transition: border 0.3s;
+}
+
+.btn-select:hover {
+    background-color: transparent;
+    border: 2px solid var(--color-blue-light);
+}
+
+/*---------------*/

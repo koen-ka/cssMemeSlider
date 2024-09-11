@@ -2,12 +2,42 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=4.0">
     <title>CSS Meme Slider</title>
     <link rel="stylesheet" href="./assets/src/normalize.css">
     <link rel="stylesheet" href="./assets/src/style.css">
+    <script type="module" src="./assets/src/index.js" defer></script>
 </head>
 <body>
-    
+    <main>
+        <div id="container" class="container flex">
+            <div id="imgs" class="container_img flex">
+                <img src="./assets/img/meme_1.jpg" alt="meme_1" id="meme_1_img">
+                <img src="./assets/img/meme_2.jpg" alt="meme_2" id="meme_2_img">
+                <img src="./assets/img/meme_3.jpg" alt="meme_3" id="meme_3_img">
+                <img src="./assets/img/meme_4.jpg" alt="meme_4" id="meme_4_img">
+            </div>
+            <div id="texts" class="container_text flex">
+                <div id="meme_1_text" class="text">
+                    <h5 class="text">Когда 10 раз перезапустил код</h5>
+                </div>
+                <div id="meme_2_text" class="text">
+                    <h5 class="text">Morning</h5>
+                </div>
+                <div id="meme_3_text" class="text">
+                    <h5 class="text">Привемлемое утро, коллеги</h5>
+                </div>
+                <div id="meme_4_text" class="text">
+                    <h5 class="text">Лапки в тапке - жизнь в порядке</h5>
+                </div>
+            </div>
+            <div class="container_btn flex">
+                <button id="meme_1_btn" class="btn-reset btn btn-select"></button>
+                <button id="meme_2_btn" class="btn-reset btn"></button>
+                <button id="meme_3_btn" class="btn-reset btn"></button>
+                <button id="meme_4_btn" class="btn-reset btn"></button>
+            </div>
+        </div>
+    </main>
 </body>
 </html>
