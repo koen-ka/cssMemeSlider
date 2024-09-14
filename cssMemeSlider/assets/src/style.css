@@ -29,10 +29,10 @@ img {
 /* ----------------------------------- global ----------------------------------- */
 /** значения подогнать под нужные */
 .container {
-    width: 680px;
+    width: 600px;
     margin: 0 auto;
     padding: 20px;
-    padding-top: 100px;
+    padding-top: 50px;
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
@@ -45,6 +45,7 @@ img {
 :root {
     --color-blue-primary: #0B5FFF;
     --color-blue-light: #B3CDFF;
+    --color-blue-active: #80ACFF;
     --color-grey-dark: #393A4A;
     --color-light-bg: #F1F2F5;
 }
@@ -59,7 +60,8 @@ img {
 /*---------------------------------стили для карточек-------------------------------------------------*/
 .container_img {
     overflow: hidden;
-    height: 680px;
+    width: 100%;
+    height: 100%;
     margin-bottom: 20px;
     border-radius: 10px;
     flex: 1 1 auto;
@@ -70,13 +72,13 @@ img {
 }
 
 
-/*---------------------------------группа текст и кнопки-------------------------------------------------*/
+/*---------------------------------группа текст и кнопки GROUP-------------------------------------------------*/
 .text-btn-group {
     width: 100%;
     justify-content: space-between;
 }
 
-/*---------------------------------стили для текста-------------------------------------------------*/
+/*---------------------------------стили для текста TEXT-------------------------------------------------*/
 .container_text {
     font-family: 'TT2020Base-Italic', Helvetica, sans-serif;
     width: 468px;
@@ -84,6 +86,7 @@ img {
     height: 23px;
     font-size: 15px;
     flex-direction: row;
+    color: var(--color-grey-dark);
     overflow: hidden;
 }
 
@@ -93,16 +96,16 @@ img {
     transition: all ease 1s;
 }
 
-/*---------------------------------стили для кнопок-------------------------------------------------*/
+/*---------------------------------стили для кнопок BUTTON-------------------------------------------------*/
 .container_btn {
     width: 120px;
-
 }
 
 .btn {
     width: 10px;
     height: 10px;
     margin: 10px;
+    position: relative;
     outline: none;
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-weight: 400;
@@ -115,11 +118,25 @@ img {
     transition: background-color 0.3s;
 }
 
+.btn::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: -10px; 
+    right: -10px; 
+    bottom: -10px; 
+    border-radius: 50px;
+    background-color: transparent; 
+    pointer-events: auto;
+}
+
 .btn:hover {
     background-color: var(--color-blue-light);
 }
+.btn:active {
+    background-color: var(--color-blue-active);
+}
 
-/* select btn */
 .btn-select {
     background-color: transparent;
     border: 2px solid var(--color-blue-primary);
@@ -129,6 +146,10 @@ img {
 .btn-select:hover {
     background-color: transparent;
     border: 2px solid var(--color-blue-light);
+}
+.btn-select:active {
+    background-color: transparent;
+    border: 2px solid var(--color-blue-active);
 }
 
 /* ----------------------------------------- Адаптивность ----------------------------------------- */
@@ -172,6 +193,14 @@ img {
         width: 100%;
         height: 100%;
         font-size: 12px;
+    }
+
+    .container_text{
+        padding-top: 0;
+    }
+
+    .container_btn{
+        margin-bottom: 13px;
     }
 
     .text {
